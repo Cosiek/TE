@@ -1,0 +1,106 @@
+^ USTAWA
+^^ z dnia ... 2020 r.
+^^ o jawności przychodów kościołów i związków wyznaniowych oraz zniesieniu ich przywilejów finansowych
+
+// Funkcjonalności:
+// - referencje
+// - escapowanie \# \\ \^ \*
+// - komentarze //
+// - numeracja
+// - podatność na git
+
+Kierując się konstytucyjną zasadą wzajemnej autonomii i niezależności państwa, kościołów i związków wyznaniowych, każdego w swoim zakresie, oraz zasadą równouprawnienia kościołów i związków wyznaniowych, a także innymi zasadami konstytucyjnymi mającymi znaczenie dla finansów publicznych, w tym zasadami praworządności, pewności prawa, niedyskryminacji oraz równości, mając na uwadze, w odniesieniu do Kościoła katolickiego, wyrażoną w Konkordacie między Stolicą Apostolską i Rzecząpospolitą Polską zasadę przyjęcia za punkt wyjścia w sprawach finansowych instytucji i dóbr kościelnych oraz duchowieństwa obowiązujące ustawodawstwo polskie i przepisy kościelne orazdążąc do zagwarantowania realizacji konstytucyjnej zasady powszechnego obowiązku ponoszenia ciężarów i świadczeń publicznych, uchwala się, co następuje:
+
+^^^ #Rozdział I#
+^^^^ Przepisy ogólne
+
+^^^^^ #Art. 1.#
+Ustawa określa zasady ewidencjonowania, przekazywania i upubliczniania informacji o przychodach uzyskiwanych przez kościoły, związki wyznaniowe i inne kościelne osoby prawne.
+
+^^^^^ #Art. 1.#
+Ilekroć w ustawie jest mowa o:
+ -#1)# kościelnych osobach prawnych – rozumie się przez to osoby prawne kościołów i innych związków wyznaniowych w rozumieniu art. 28 ustawy z dnia 17 maja 1989 r. o gwarancjach wolności sumienia i wyznania (Dz. U. z 2017 r. poz. 1155), jak również wszystkie instytucje kościelne lub wyznaniowe terytorialne i personalne kościołów i związków wyznaniowych, które uzyskały osobowość prawną na podstawie przepisów prawa kanonicznego po powiadomieniu właściwych organów państwa lub na mocy ustaw indywidualnych określających stosunek państwa do poszczególnych kościołów i związków wyznaniowych, a także te jednostki organizacyjne kościołów i związków wyznaniowych, które powstały na mocy ich prawa wewnętrznego;
+ -#1)# państwowych osobach prawnych – rozumie się przez to państwowe osoby prawne, o których mowa w art. 3 ustawy z dnia 16 grudnia 2016 r. o zasadach zarządzania mieniem państwowym (Dz.U. z 2020 r. poz. 735);
+ -#1)# podmiotach sektora finansów publicznych – rozumie się przez to podmioty, o których mowa w art. 9 ustawy z dnia 27 sierpnia 2009 r. o finansach publicznych (Dz.U. z 2019 r. poz. 869 i 1649 oraz z 2020 r. poz. 284, 374, 568 i 695);
+ -#1)# przysporzeniu majątkowym na rzecz kościołów, związków wyznaniowych i innych kościelnych osób prawnych – rozumie się przez to każde przeniesienie własności rzeczy lub świadczenie, a w szczególności darowizny pieniężne i niepieniężne, w tym także niematerialne jak prawa, licencje, patenty, prawa autorskie, prawa do znaków użytkowych, rozpowszechnianie dzieł sztuki, treści literackich i wizualnych, udostępnianie wszelkich przedmiotów artystycznych, dotacje na realizację celów lub czynności zleconych, jak i świadczenie wynikające z transakcji nie ekwiwalentnej na rzecz jakiegokolwiek z wyżej wymienionych podmiotów, w której przekracza ono otrzymaną w zamian cenę lub wartość dóbr, usług lub innego przedmiotu transakcji.
+
+^^^^^ #Art. 1.#
+Przysporzenia majątkowe dokonywane na rzecz kościołów, związków wyznaniowych i innych kościelnych osób prawnych przez podmioty sektora finansów publicznych, państwowe osoby prawne oraz spółki prawa handlowego, w których Skarb Państwa, podmioty sektora finansów publicznych lub państwowe osoby prawne posiadają przynajmniej 30% udziałów albo akcji, są ewidencjonowane bez względu na ich wartość i cel w sposób określony w ustawie.
+
+^^^ #Rozdział I#
+^^^^ Obowiązki podmiotów
+
+^^^^^ #Art. 1.#
+#1.# Jednostki organizacyjne kościołów, związków wyznaniowych oraz inne kościelne osoby prawne prowadzą ewidencję uzyskiwanych przychodów oraz przekazują właściwemu miejscowo naczelnikowi urzędu skarbowego, w terminie do 7 roboczego dnia drugiego miesiąca każdego kwartału, informację o wysokości przychodów uzyskanych w poprzednim kwartale.
+#1.# Przychodem w rozumieniu ustawy są wszystkie przysporzenia majątkowe na rzecz kościołów, związków wyznaniowych, organizacji wyznaniowych i innych kościelnych osób prawnych.
+#1.# Kwoty łącznych przychodów podawane w składanej informacji nie obejmują przychodów uzyskiwanych od innych jednostek organizacyjnych danego kościoła lub związku wyznaniowego.
+#1.# Naczelnik urzędu skarbowego dokonuje zbiorczego zestawienia otrzymanych informacji o wysokości przychodów i przekazuje je, według stanu na koniec każdego kwartału, Szefowi Krajowej Administracji Skarbowej w terminie 30 dni od terminu, o którym mowa w ust. 1.
+#1.# Szef Krajowej Administracji Skarbowej publikuje przekazane mu informacje w zbiorczym zestawieniu zawierającym nazwę jednostki organizacyjnej kościoła lub związku wyznaniowego i wysokość ujawnionych przychodów w Biuletynie Informacji Publicznej.
+#1.# Minister właściwy do spraw finansów publicznych, po zasięgnięciu opinii Szefa Krajowej Administracji Skarbowej, określi, w drodze rozporządzenia, sposób prowadzenia ewidencji przychodów oraz formularz informacji, o których mowa w ust. 1, uwzględniając możliwość przekazywania informacji drogą elektroniczną.
+
+^^^^^ #Art. 1.#
+#1.# Podmioty sektora finansów publicznych, państwowe osoby prawne oraz spółki prawa handlowego, w których Skarb Państwa, podmioty sektora finansów publicznych lub państwowe osoby prawne posiadają przynajmniej 30% udziałów albo akcji, przekazują, w terminie do dnia 31 marca każdego roku, do Szefa Krajowej Administracji Skarbowej informację na temat wysokości przysporzeń dokonanych na rzecz kościołów, związków wyznaniowych i innych kościelnych osób prawnych w roku poprzednim.
+#1.# Informacja, o której mowa w ust. 1, obejmuje wskazanie podmiotu, któremu przekazano środki, celu, na jaki mają być one przeznaczone, wysokości tych środków oraz podstawę prawną ich przekazania.
+#1.# Szef Krajowej Administracji Skarbowej publikuje zbiorcze zestawienie informacji, o których mowa w ust. 1, według stanu na koniec każdego roku kalendarzowego, w Biuletynie Informacji Publicznej.
+#1.# Minister właściwy do spraw finansów publicznych, po zasięgnięciu opinii Szefa Krajowej Administracji Skarbowej, może określić, w drodze rozporządzenia, formularz informacji, o której mowa w ust. 1, uwzględniając możliwość przekazywania jej drogą elektroniczną.
+
+^^^ #Rozdział I#
+^^^^ Zadania {{kogo= Szefa}} Krajowej Administracji Skarbowej w zakresie realizacji ustawy
+
+^^^^^ {{ liczebnik = #Art. 1.# }}
+Do zadań {{kogo}} Krajowej Administracji Skarbowej należy:
+ -#1)# zbieranie informacji, o których mowa w art. 4 i {{ liczebnik }};
+ -#1)# prowadzenie ewidencji przychodów, o których mowa w art. 4 ust. 1, na podstawie zbiorczych zestawień, o których mowa w art. 4 ust. 4;
+ -#1)# prowadzenie ewidencji przysporzeń, o których mowa w art. 5 ust. 1, na podstawie informacji, o których mowa w art. 5 ust. 2;
+ -#1)# publikowanie w Biuletynie Informacji Publicznej informacji, o których mowa w art. 4 ust. 5 i art. 5 ust. 3, w terminie do 30 czerwca każdego roku.
+
+^^^^^ #Art. 1.#
+#1.# W zakresie swoich zadań Szef Krajowej Administracji Skarbowej może:
+  -#1)# występować do właściwych organów z wnioskami o podjęcie inicjatywy ustawodawczej w sprawach dotyczących:
+   -#a) przysporzeń dokonanychna rzecz kościołów, związków wyznaniowych i innych kościelnych osób prawnych przez podmioty sektora finansów publicznych, państwowe osoby prawne oraz spółki prawa handlowego, w których Skarb Państwa, podmioty sektora finansów publicznych lub państwowe osoby prawne posiadają przynajmniej 30% udziałów albo akcji,
+   -#b) szczególnych zasad transakcji z kościołami, związkami wyznaniowymi i innymi kościelnymi osobami prawnymi;
+  -#1)# informować właściwe organy nadzoru lub kontroli, w szczególności Najwyższą Izbę Kontroli, o dostrzeżonych nieprawidłowościach w funkcjonowaniu podmiotów, o których mowa w art. 3, w zakresie dokonywania przysporzeń na rzecz kościołów, związków wyznaniowych i kościelnych osób prawnych;
+  -#1)# występować do Naczelnego Sądu Administracyjnego z wnioskami o podjęcie uchwały mającej na celu wyjaśnienie przepisów prawnych, których stosowanie wywołało rozbieżności w orzecznictwie sądów administracyjnych;
+  -#1)# zwrócić się o wszczęcie postępowania administracyjnego, wnosić skargi i skargi kasacyjne do sądu administracyjnego, a także uczestniczyć w tych postępowaniach, na prawach przysługujących prokuratorowi;
+  -#1)# żądać wszczęcia przez uprawnionego oskarżyciela postępowania przygotowawczego w sprawach o przestępstwa wszczynane z urzędu;
+  -#1)# badać, z upoważnienia ministra właściwego do spraw finansów publicznych, prawidłowość przekazania środków finansowych kościołom, związkom wyznaniowych oraz innym kościelnym osobom prawnym przez podmioty, o których mowa w Art. #1.
+  -#1)# współpracować z organizacjami pozarządowymi, społecznymi izawodowymi, do których celów statutowych należy ochrona wolności sumienia i wyznania oraz współdziałanie ze stowarzyszeniami, ruchami obywatelskimi, innymi dobrowolnymi zrzeszeniami i fundacjami oraz z zagranicznymi i międzynarodowymi organami i organizacjami działającymi na rzecz swobody wyboru religii lub przekonań, równości praw osób wierzących wszystkich wyznań oraz niewierzących w życiu państwowym, politycznym, gospodarczym, społecznym i kulturalnym w zakresie zadań, o których mowa w Art. #1.
+#1.# W celu wykonywania zadań Szef Krajowej Administracji Skarbowej może zawierać umowy na przeprowadzenie badań lub sporządzenie ekspertyz i opinii.
+
+^^^^^ #Art. 1.#
+#1.# Podjęcie czynności przez Szefa Krajowej Administracji Skarbowej następuje z urzędu lub na wniosek.
+#1.# Każdy może zwracać się do Szefa Krajowej Administracji Skarbowej z wnioskiem o podjęcie działań w zakresie zadań Szefa Krajowej Administracji Skarbowej, o których mowa w Art. #1.
+#1.# Szef Krajowej Administracji Skarbowej, po zapoznaniu się ze skierowanym do niego wnioskiem, może:
+  -#1)#podjąć czynności;
+  -#1)#wskazać wnioskodawcy przysługujące mu prawa i środki działania;
+  -#1)#przekazać sprawę według właściwości;
+  -#1)#odmówić podjęcia czynności, o czym, uzasadniając swoje stanowisko, zawiadamia wnioskodawcę.
+
+^^^^^ #Art. 1.#
+#1.# Szef Krajowej Administracji Skarbowej może zwracać się do właściwych organów, organizacji lub instytucji publicznych z ocenami i wnioskami w zakresie swoich zadań.
+#1.# Organy, organizacje i instytucje publiczne, o których mowa w ust. 1, są zobowiązane do rozpatrzenia spraw skierowanych przez Szefa Krajowej Administracji Skarbowej.
+#1.# Organy, organizacje lub instytucje publiczne, o których mowa w ust. 1, do których Szef Krajowej Administracji Skarbowej zwrócił się o podjęcie działań, o których mowa w ust. 1, są obowiązane niezwłocznie, nie później jednak niż w terminie 30 dni, poinformować go o podjętych działaniach lub zajętym stanowisku.
+#1.# W przypadku gdy organy, organizacje lub instytucje publiczne, o których mowa w ust. 1, nie poinformują Szefa Krajowej Administracji Skarbowej o podjętych działaniach lub zajętym stanowisku albo gdy Szef Krajowej Administracji Skarbowej nie podziela ich stanowiska, Szef Krajowej Administracji Skarbowej może zwrócić się do właściwej jednostki nadrzędnej o podjęcie odpowiednich działań.
+#1.# Szef Krajowej Administracji Skarbowej publikuje na swojej stronie podmiotowej Biuletynu Informacji Publicznej dane dotyczące liczby nieudzielonych odpowiedzi, o których mowa w ust. 4.
+#1.# W przypadku gdy Szef Krajowej Administracji Skarbowej stwierdziłnaruszenie zasad dokonywania przysporzeń ze środków publicznych na rzecz kościołów, związków wyznaniowych i kościelnych osób prawnych lub transakcji między podmiotami, o których mowa w art. 3 ust. 1 a kościołami, związkami wyznaniowymi i innymi kościelnymi osobami prawnymi, może zwrócić się z wnioskiem o wszczęcie postępowania wyjaśniającego lub dyscyplinarnego.
+
+^^^^^ #[10001]Art. 1.#
+#1.# Organy, organizacje lub instytucje publiczne, do których zwróci się Szef Krajowej Administracji Skarbowej, są obowiązane z nim współdziałać i udzielać mu pomocy.
+#1.# Organy, organizacje lub instytucje publiczne są obowiązane w szczególności:
+  -#1)#zapewnić dostęp do akt i dokumentów spraw zakończonych;
+  -#1)#udzielać żądanych przez Szefa Krajowej Administracji Skarbowej informacji i wyjaśnień;
+  -#1)#udzielać wyjaśnień dotyczących podstawy faktycznej i prawnej swoich rozstrzygnięć.
+#1.# Przepisów ust. 1 i 2 nie stosuje się do informacji niejawnych w rozumieniu ustawy z dnia 5 sierpnia 2010 r. o ochronie informacji niejawnych (Dz.U. z 2019 r. poz. 745).
+#1.# Szef Krajowej Administracji Skarbowej jest obowiązany do ochrony oraz nieudostępniania podmiotom nieuprawnionym informacji i danych, uzyskanych zgodnie z ust. 1 i 2, jeśli stanowią one tajemnice prawnie chronione.
+
+^^^^^ #Art. 1.#
+#1.# Z uwzględnieniem przepisów dotyczących tajemnic prawnie chronionych Szef Krajowej Administracji Skarbowej może przetwarzać wszelkie informacje niezbędne do realizacji swoich ustawowych zadań, w tym dane osobowe.
+#1.# Szef Krajowej Administracji Skarbowej może odmówić ujawnienia danych osobowych osoby, od której uzyskał informację, oraz podmiotu, której naruszenie dotyczy, a także dokumentacji zgromadzonej w toku badania sprawy, w tym także wobec organów władzy publicznej, jeżeli uzna to za niezbędne dla ochrony wolności, praw i interesów jednostki.
+#1.# Nie można odmówić ujawnienia informacji, w tym danych osobowych lub dokumentacji, o których mowa w ust. 2, gdy zatajenie takich informacji, danych osobowych lub dokumentów prowadziłoby do zagrożenia życia lub zdrowia innych osób lub mogło zagrażać bezpieczeństwu lub porządkowi publicznemu.
+
+^^^^^ #[11.11:-2.22]Art. 1.#
+#1.# Szef Krajowej Administracji Skarbowej przedstawia corocznie, w terminie do dnia 31 marca, ministrowi właściwemu do spraw finansów publicznych, a także podaje do wiadomości publicznej, sprawozdanie ze swojej działalności w poprzednim roku kalendarzowym.
+#1.# Sprawozdanie, o którym mowa w ust. 1, zawiera w szczególności informacje o podjętych przez Szefa Krajowej Administracji Skarbowej czynnościach, a także uwagi o dostrzeżonych barierach i utrudnieniach w zakresie spraw należących do zadań Szefa Krajowej Administracji Skarbowej.
+
+^^^^^ #[:5]Art. 1.#
+Wydatki bieżące związane z realizacją zadań Szefa Krajowej Administracji Skarbowej określonych w niniejszej ustawie są ujmowane w ustawie budżetowej i pokrywane z budżetu państwa, z części, której dysponentem jest minister właściwy do spraw finansów publicznych #1# #1# #1#.
