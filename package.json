@@ -1,0 +1,22 @@
+{
+  "name": "te",
+  "version": "0.0.1",
+  "description": "Not yet",
+  "main": "src/run.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cosiek/TE.git"
+  },
+  "author": "Cosiek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cosiek/TE/issues"
+  },
+  "homepage": "https://github.com/Cosiek/TE#readme"
+}
