@@ -1,8 +1,11 @@
+fs = require('fs');
+path = require('path');
 
-function sum(a, b) {
-  return a + b;
-}
+converter = require(path.resolve(__dirname, '..', 'src', 'converter.js'))
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+
+test('very general conversion to HTML', () => {
+    sampleInput = fs.readFileSync(path.resolve(__dirname, 'sample_input'), 'utf8');
+    fs.writeFileSync(path.resolve(__dirname, 'output.html'), converter.convert(sampleInput));
+    //expect(sum(1, 2)).toBe(3);
 });
