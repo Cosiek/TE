@@ -51,6 +51,16 @@ class RomanEnumerationParser extends EnumerationParser{
     ]
 
     numberToStr(number){
+        if (number > 0){
+            return this._numberToStr(number);
+        } else if (number === 0) {
+            return "0"
+        } else {
+            return "-" + this._numberToStr(number * -1);
+        }
+    }
+
+    _numberToStr(number){
         let roman = "";
         for (let nr of this.numbers) {
             while (number >= nr[1]) {
@@ -61,7 +71,17 @@ class RomanEnumerationParser extends EnumerationParser{
         return roman;
     }
 
-    strToNumber(str){  // TODO: test
+    strToNumber(str){  // TODO: unsupported chars
+        if (str === '0'){
+            return 0;
+        } else if (str[0] === '-'){
+            return this._strToNumber(str.replace(/^-/, "")) * -1;
+        }   else {
+            return this._strToNumber(str);
+        }
+    }
+
+    _strToNumber(str){  // TODO: test
         const roman = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
         let number = 0;
         for (let i = 0; i < str.length; i++) {
