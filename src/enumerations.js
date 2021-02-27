@@ -31,9 +31,14 @@ class FloatEnumerationParser extends EnumerationParser{
     regex = /\d+([\.,])\d+/
 
     getValue(pattern, number){
+        pattern = pattern.substring(1, pattern.length-1);
         let separator = pattern.match(this.regex)[1];
         let numTxt = this.numberToStr(number).replace(/([\.,])/, separator);
         return pattern.replace(this.regex, numTxt);
+    }
+
+    numberToStr(number){
+        return number % 1 ? number + "" : number + ".0";
     }
 }
 
