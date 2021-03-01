@@ -1,163 +1,18 @@
 
-class EnumerationParser{
-    regex = null;
+baseEnumeration = require('./enumeration_types/base_enumeration')
+EnumerationParser = baseEnumeration.BaseEnumerationParser
 
-    isPattern(pattern){
-        let match = pattern.match(this.regex);
-        return match !== null;
-    }
-
-    numberToStr(number){
-        return number + "";
-    }
-
-    stdStrToNumber(str){
-        return Number(str);
-    }
-
-    strToNumber(str){
-        return this.stdStrToNumber(str);
-    }
-
-    getValue(pattern, number){
-        // strip # chars from pattern
-        pattern = pattern.substring(1, pattern.length-1);
-        return pattern.replace(this.regex, this.numberToStr(number));
-    }
-}
-
-
-class FloatEnumerationParser extends EnumerationParser{
-    regex = /\d+([\.,])\d+/
-
-    getValue(pattern, number){
-        pattern = pattern.substring(1, pattern.length-1);
-        let separator = pattern.match(this.regex)[1];
-        let numTxt = this.numberToStr(number).replace(/([\.,])/, separator);
-        return pattern.replace(this.regex, numTxt);
-    }
-
-    numberToStr(number){
-        return number % 1 ? number + "" : number + ".0";
-    }
-}
-
-
-class IntEnumerationParser extends EnumerationParser{
-    regex = /\d+/
-}
-
-
-class RomanEnumerationParser extends EnumerationParser{
-    regex = /\b([IVXLCDM]+)\b/
-    numbers = [
-        ['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90],
-        ['L', 50], ['XL', 40], ['X' ,10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]
-    ]
-
-    numberToStr(number){
-        if (number > 0){
-            return this._numberToStr(number);
-        } else if (number === 0) {
-            return "0"
-        } else {
-            return "-" + this._numberToStr(number * -1);
-        }
-    }
-
-    _numberToStr(number){
-        let roman = "";
-        for (let nr of this.numbers) {
-            while (number >= nr[1]) {
-                roman += nr[0];
-                number -= nr[1];
-            }
-        }
-        return roman;
-    }
-
-    strToNumber(str){  // TODO: unsupported chars
-        if (str === '0'){
-            return 0;
-        } else if (str[0] === '-'){
-            return this._strToNumber(str.replace(/^-/, "")) * -1;
-        }   else {
-            return this._strToNumber(str);
-        }
-    }
-
-    _strToNumber(str){  // TODO: test
-        const roman = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
-        let number = 0;
-        for (let i = 0; i < str.length; i++) {
-            const curr = roman[str[i]];
-            const next = roman[str[i + 1]];
-            if (curr < next){
-                (number -= curr);
-            } else {
-                (number += curr);
-            }
-        }
-        return number;
-    }
-}
-
-
-class LettersEnumerationParser extends EnumerationParser{
-    regex = /\b([a-z])\b/
-    alphabet = "abcdefghijklmnopqrstuwvxyz"
-
-    numberToStr(number){
-        // TODO: what about negative numbers
-        // TODO: what about numbers outside of this range?
-        return this.alphabet[number - 1];
-    }
-
-    strToNumber(str){
-        // TODO: what about longer stings and chars that are not in alphabet
-        return this.alphabet.indexOf(str) + 1;
-    }
-}
-
-
-class CapitalLettersEnumerationParser extends EnumerationParser{
-    regex = /\b([A-Z])\b/
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUWVXYZ"
-
-    numberToStr(number){
-        if (number > 0){
-            return this._numberToStr(number - 1);
-        } else if (number === 0){
-            return '0';
-        } else {
-            // negative numbers are handled like positive ones, except prefixed with "-"
-            return "-" + this._numberToStr((number * -1) - 1);
-        }
-    }
-
-    _numberToStr(number){
-        let whole = Math.floor(number / this.alphabet.length);
-        let rest = number % this.alphabet.length;
-        if (whole === 0){
-            //console.log("GRRR", whole, rest, number)
-            return this.alphabet[rest];
-        }
-        return this._numberToStr(whole - 1) + this.alphabet[rest];
-    }
-
-    strToNumber(str){
-        // TODO: what about longer stings and chars that are not in alphabet
-        return this.alphabet.indexOf(str) + 1;
-    }
-}
+romanEnumeration = require('./enumeration_types/roman_enumeration')
+alphabetEnumeration = require('./enumeration_types/alphabet_enumeration')
+numbersEnumeration = require('./enumeration_types/numbers_enumeration')
 
 
 const PARSERS = [
-    new FloatEnumerationParser(),           // floating point number
-    new IntEnumerationParser(),             // number
-    new RomanEnumerationParser(),           // roman numbers
-    new LettersEnumerationParser(),         // a-z
-    new CapitalLettersEnumerationParser(),  // A-Z
+    new numbersEnumeration.FloatEnumerationParser(),            // floating point number
+    new numbersEnumeration.IntEnumerationParser(),              // number
+    new romanEnumeration.RomanEnumerationParser(),              // roman numbers
+    new alphabetEnumeration.LettersEnumerationParser(),         // a-z
+    new alphabetEnumeration.CapitalLettersEnumerationParser(),  // A-Z
 ]
 
 
