@@ -226,11 +226,6 @@ function substitute(text){
             // matchAll returns an iterator, that we want to iterate in reverse order
             let matches = []
             for (let match of matchesIterator){
-                matches.push(match);
-            }
-            // now for the right iteration
-            for (let i = matches.length - 1; i >= 0; i--){  // TODO: reverse order still makes sense?
-                let match = matches[i];
                 // clear pattern (get rid of start and step information)
                 let [enumSettings, pattern] = Enumeration.clearPattern(match[0]);
                 if (!(pattern in enumerators)){
