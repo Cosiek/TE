@@ -1,26 +1,7 @@
 baseEnumeration = require('./base_enumeration')
 
 
-class LettersEnumerationParser extends baseEnumeration.BaseEnumerationParser{
-    regex = /\b([a-z])\b/
-    alphabet = "abcdefghijklmnopqrstuwvxyz"
-
-    numberToStr(number){
-        // TODO: what about negative numbers
-        // TODO: what about numbers outside of this range?
-        return this.alphabet[number - 1];
-    }
-
-    strToNumber(str){
-        // TODO: what about longer stings and chars that are not in alphabet
-        return this.alphabet.indexOf(str) + 1;
-    }
-}
-
-
-class CapitalLettersEnumerationParser extends baseEnumeration.BaseEnumerationParser{
-    regex = /\b([A-Z])\b/
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUWVXYZ"
+class AlphabetEnumerationParser extends baseEnumeration.BaseEnumerationParser{
 
     numberToStr(number){
         if (number > 0){
@@ -47,6 +28,19 @@ class CapitalLettersEnumerationParser extends baseEnumeration.BaseEnumerationPar
         // TODO: what about longer stings and chars that are not in alphabet
         return this.alphabet.indexOf(str) + 1;
     }
+}
+
+// TODO - alphabetEnumerationParserFactory
+
+class LettersEnumerationParser extends AlphabetEnumerationParser{
+    regex = /\b([a-z])\b/
+    alphabet = "abcdefghijklmnopqrstuwvxyz"
+}
+
+
+class CapitalLettersEnumerationParser extends AlphabetEnumerationParser{
+    regex = /\b([A-Z])\b/
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUWVXYZ"
 }
 
 module.exports.LettersEnumerationParser = LettersEnumerationParser;
