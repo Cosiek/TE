@@ -18,7 +18,6 @@ class AlphabetEnumerationParser extends baseEnumeration.BaseEnumerationParser{
         let whole = Math.floor(number / this.alphabet.length);
         let rest = number % this.alphabet.length;
         if (whole === 0){
-            //console.log("GRRR", whole, rest, number)
             return this.alphabet[rest];
         }
         return this._numberToStr(whole - 1) + this.alphabet[rest];
@@ -30,18 +29,15 @@ class AlphabetEnumerationParser extends baseEnumeration.BaseEnumerationParser{
     }
 }
 
-// TODO - alphabetEnumerationParserFactory
+function alphabetEnumerationParserFactory(regex, alphabet){
+    class SomeAlphabetEnumerationParser extends AlphabetEnumerationParser {
+        regex = regex
+        alphabet = alphabet
+    }
 
-class LettersEnumerationParser extends AlphabetEnumerationParser{
-    regex = /\b([a-z])\b/
-    alphabet = "abcdefghijklmnopqrstuwvxyz"
+    return SomeAlphabetEnumerationParser;
 }
 
-
-class CapitalLettersEnumerationParser extends AlphabetEnumerationParser{
-    regex = /\b([A-Z])\b/
-    alphabet = "ABCDEFGHIJKLMNOPQRSTUWVXYZ"
-}
-
-module.exports.LettersEnumerationParser = LettersEnumerationParser;
-module.exports.CapitalLettersEnumerationParser = CapitalLettersEnumerationParser;
+module.exports.alphabetEnumerationParserFactory = alphabetEnumerationParserFactory;
+module.exports.LettersEnumerationParser = alphabetEnumerationParserFactory(/\b([a-z])\b/, "abcdefghijklmnopqrstuwvxyz");
+module.exports.CapitalLettersEnumerationParser = alphabetEnumerationParserFactory(/\b([A-Z])\b/, "ABCDEFGHIJKLMNOPQRSTUWVXYZ");
