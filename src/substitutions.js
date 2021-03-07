@@ -12,9 +12,9 @@ function handleSubstitutions(text){
         for (let match of matchesIterator){
             let key = match[1].trim();
             if (match[2].length){
-                values[key] = match[2].trim();
+                values.set(key, match[2].trim());
             }
-            newLine = newLine.replace(match[0], values[key]);
+            newLine = newLine.replace(match[0], values.get(key));
         }
         newText += newLine + "\n"
     }
