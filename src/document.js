@@ -1,9 +1,28 @@
 /*
+Base Node Class ===============================================================
+*/
+
+class BaseNode{
+
+    constructor(line){}
+
+    static isStartLine(line){
+        return false;
+    }
+
+    canIncludeLine(line){}
+
+    addLine(line){}
+}
+
+/*
 Node Classes ==================================================================
 */
 
-class EmptyLineNode{
+class EmptyLineNode extends BaseNode{
+
     constructor(line){
+        super();
         this.count = 1;
     }
 
@@ -37,6 +56,7 @@ function newNodeFromLine(line){
 }
 
 class MarkItDocument{
+
     constructor(text){
         this.nodes = this.processText(text);
     }
