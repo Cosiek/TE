@@ -4,15 +4,21 @@ Base Node Class ===============================================================
 
 class BaseNode{
 
-    constructor(line){}
+    constructor(line){
+        this.line = line;
+    }
 
     static isStartLine(line){
         return false;
     }
 
-    canIncludeLine(line){}
+    canIncludeLine(line){
+        return false;
+    }
 
-    addLine(line){}
+    addLine(line){
+        throw Error('NotImplementedError');
+    }
 }
 
 /*
@@ -39,12 +45,26 @@ class EmptyLineNode extends BaseNode{
     }
 }
 
+class HeaderNode extends BaseNode{
+
+    constructor(line){
+        super(line);
+        // determine header degree
+        this.degree = line.match(/^\^+/)[0].length;
+    }
+
+    static isStartLine(line){
+        return line.startsWith('^');
+    }
+}
+
 /*
 Document Class ================================================================
 */
 
 NODE_CLASSES = [
     EmptyLineNode,
+    HeaderNode,
 ]
 
 function newNodeFromLine(line){
