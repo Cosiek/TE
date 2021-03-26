@@ -25,6 +25,16 @@ class BaseNode{
 Node Classes ==================================================================
 */
 
+class CommentNode extends BaseNode{
+    static isStartLine(line){
+        return line.startsWith('//');
+    }
+
+    canIncludeLine(line){
+        return CommentNode.isStartLine(line);
+    }
+}
+
 class EmptyLineNode extends BaseNode{
 
     constructor(line){
@@ -68,6 +78,7 @@ Document Class ================================================================
 */
 
 NODE_CLASSES = [
+    CommentNode,
     EmptyLineNode,
     HeaderNode,
 ]
