@@ -25,6 +25,16 @@ class BaseNode{
 Node Classes ==================================================================
 */
 
+class CodeNode extends BaseNode{
+    static isStartLine(line){
+        return line.startsWith('```');
+    }
+
+    canIncludeLine(line){
+        return this.lines.length === 1 || this.lines.length > 1 && this.lines[this.lines.length-1].trim() != "```";
+    }
+}
+
 class CommentNode extends BaseNode{
     static isStartLine(line){
         return line.startsWith('//');
@@ -78,6 +88,7 @@ Document Class ================================================================
 */
 
 NODE_CLASSES = [
+    CodeNode,
     CommentNode,
     EmptyLineNode,
     HeaderNode,

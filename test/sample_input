@@ -93,6 +93,14 @@ Do zadań {{kogo}} Krajowej Administracji Skarbowej należy:
 #1.# Przepisów ust. 1 i 2 nie stosuje się do informacji niejawnych w rozumieniu ustawy z dnia 5 sierpnia 2010 r. o ochronie informacji niejawnych (Dz.U. z 2019 r. poz. 745).
 #1.# Szef Krajowej Administracji Skarbowej jest obowiązany do ochrony oraz nieudostępniania podmiotom nieuprawnionym informacji i danych, uzyskanych zgodnie z ust. 1 i 2, jeśli stanowią one tajemnice prawnie chronione.
 
+```
+if (somehing){
+    do(something)
+} else {
+    dontDo(nothing)
+}
+```
+
 ^^^^^ #Art. 1.#
 #1.# Z uwzględnieniem przepisów dotyczących tajemnic prawnie chronionych Szef Krajowej Administracji Skarbowej może przetwarzać wszelkie informacje niezbędne do realizacji swoich ustawowych zadań, w tym dane osobowe.
 #1.# Szef Krajowej Administracji Skarbowej może odmówić ujawnienia danych osobowych osoby, od której uzyskał informację, oraz podmiotu, której naruszenie dotyczy, a także dokumentacji zgromadzonej w toku badania sprawy, w tym także wobec organów władzy publicznej, jeżeli uzna to za niezbędne dla ochrony wolności, praw i interesów jednostki.
