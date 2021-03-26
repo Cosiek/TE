@@ -5,7 +5,7 @@ Base Node Class ===============================================================
 class BaseNode{
 
     constructor(line){
-        this.line = line;
+        this.lines = [line,];
     }
 
     static isStartLine(line){
@@ -17,7 +17,7 @@ class BaseNode{
     }
 
     addLine(line){
-        throw Error('NotImplementedError');
+        this.lines.push(line);
     }
 }
 
@@ -29,6 +29,7 @@ class EmptyLineNode extends BaseNode{
 
     constructor(line){
         super();
+        this.lines = null;
         this.count = 1;
     }
 
@@ -55,6 +56,10 @@ class HeaderNode extends BaseNode{
 
     static isStartLine(line){
         return line.startsWith('^');
+    }
+
+    addLine(line){
+        throw Error('NotAllowed: adding lines to header nodes is not allowed.');
     }
 }
 
