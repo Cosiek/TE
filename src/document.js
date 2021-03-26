@@ -83,6 +83,20 @@ class HeaderNode extends BaseNode{
     }
 }
 
+class ParagraphNode extends BaseNode{
+    static isStartLine(line){
+        return true;
+    }
+
+    canIncludeLine(line){
+        return false;
+    }
+
+    addLine(line){
+        throw Error('NotAllowed: adding lines to paragraph nodes is not allowed.');
+    }
+}
+
 /*
 Document Class ================================================================
 */
@@ -92,6 +106,7 @@ NODE_CLASSES = [
     CommentNode,
     EmptyLineNode,
     HeaderNode,
+    ParagraphNode,  // Paragraph node accepts all lines, so needs to be on the bottom of check list.
 ]
 
 function newNodeFromLine(line){
@@ -125,20 +140,15 @@ class MarkItDocument{
         for (let line of text.split("\n")){
             // group lines into nodes (paragraphs / headers / list / ...)
             if (nodes.length === 0){
-                let newNode = newNodeFromLine(line);
-                if (newNode !== undefined){
-                    nodes.push(newNode);
-                }continue;
+                nodes.push(newNodeFromLine(line));
+                continue;
             }
 
             let lastNode = nodes[nodes.length-1];
             if (lastNode.canIncludeLine(line)){
                 lastNode.addLine(line);
             } else {
-                let newNode = newNodeFromLine(line);
-                if (newNode !== undefined){
-                    nodes.push(newNode);
-                }
+                nodes.push(newNodeFromLine(line))
             }
         }
 
