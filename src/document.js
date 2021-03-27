@@ -1,11 +1,15 @@
+lineProcessor = require('./lineProcessor')
+
 /*
 Base Node Class ===============================================================
 */
 
 class BaseNode{
 
-    constructor(line){
+    constructor(line, document){
+        this.document = document;
         this.lines = [line,];
+        this.processedLines = [];
     }
 
     static isStartLine(line){
@@ -18,6 +22,16 @@ class BaseNode{
 
     addLine(line){
         this.lines.push(line);
+    }
+
+    processContent(){
+        for (let line of this.lines){
+            this.processedLines.push(this.processLine(line));
+        }
+    }
+
+    processLine(line){
+        return lineProcessor.process(line);
     }
 }
 
@@ -64,6 +78,8 @@ class EmptyLineNode extends BaseNode{
     addLine(line){
         this.count++;
     }
+
+    processContent(){/* Nothing to do here */}
 }
 
 class HeaderNode extends BaseNode{
@@ -141,6 +157,7 @@ class MarkItDocument{
         Processes given text, to produce a Document object.
         */
         let nodes = this.splitTextToNodes(text);
+        this.processNodesContent(nodes)
         return nodes;
     }
 
@@ -168,7 +185,11 @@ class MarkItDocument{
         return nodes
     }
 
-
+    processNodesContent(nodes){
+        for (let node of nodes){
+            node.processContent();
+        }
+    }
 }
 
 module.exports.MarkItDocument = MarkItDocument;
