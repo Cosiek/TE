@@ -83,7 +83,19 @@ class HeaderNode extends BaseNode{
     }
 }
 
+class ListNode extends BaseNode{
+
+    static isStartLine(line){
+        return Boolean(line.match(/^(\s+)-/));
+    }
+
+    canIncludeLine(line){
+        return ListNode.isStartLine(line);
+    }
+}
+
 class ParagraphNode extends BaseNode{
+
     static isStartLine(line){
         return true;
     }
@@ -106,6 +118,7 @@ NODE_CLASSES = [
     CommentNode,
     EmptyLineNode,
     HeaderNode,
+    ListNode,
     ParagraphNode,  // Paragraph node accepts all lines, so needs to be on the bottom of check list.
 ]
 
