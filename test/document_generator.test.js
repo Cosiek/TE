@@ -1,12 +1,11 @@
 fs = require('fs');
 path = require('path');
 
-processor = require(path.resolve(__dirname, '..', 'src', 'processor.js'))
-
+txtEd = require(path.resolve(__dirname, '..', 'src', 'txtEd'))
 
 test('Basic document generation.', () => {
     let sampleInput = fs.readFileSync(path.resolve(__dirname, 'sample_input'), 'utf8');
-    let document = processor.getDocument(sampleInput);
+    let document = txtEd.getDocument(sampleInput);
     expect(document.nodes.length).toBe(85);
 
     // count node types
