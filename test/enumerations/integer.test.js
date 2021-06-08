@@ -1,10 +1,24 @@
 path = require('path');
 
 enumerations = require(path.resolve(__dirname, '..', '..', 'src', 'enumerations.js'))
+lineProcessor = require(path.resolve(__dirname, '..', '..', 'src', 'lineProcessor.js'))
 
 
 test('Integer - basic enumerations', () => {
-    let sampleInput = `#1.# little kitty, #1.# little kitties, #1.# little kitties`;
+    let inputLine = `{#1.#} little kitty, {#1.#} little kitties, {#1.#} little kitties`;
+    let line = lineProcessor.processLine(inputLine);
+
+    expect(line.nodes.length).toBe(6);
+    expect(line.nodes[0].nodes[0]).toBe("Hello World ");
+    expect(line.nodes[0].originalStr).toBe("{#1.#}");
+    expect(line.nodes[1].originalStr).toBe(" little kitty, ");
+    expect(line.nodes[2].originalStr).toBe("{#1.#}");
+    expect(line.nodes[3].originalStr).toBe(" little kitties, ");
+    expect(line.nodes[4].originalStr).toBe("{#1.#}");
+    expect(line.nodes[5].originalStr).toBe(" little kitties");
+    expect(line.nodes[2].nodes[0]).toBe("!");
+    // jest -t 'basic enumerations' test/enumerations/integer.test.js
+
     let processed = enumerations.substitute(sampleInput);
     let expected = `1. little kitty, 2. little kitties, 3. little kitties\n`;
     expect(processed === expected).toBe(true);

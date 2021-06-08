@@ -1,0 +1,6 @@
+Hello Wo\rld - pointless escaping
+Last char escaped\\
+\\ First one secaped
+Hello \{# World 1 #}! - escaping enumeration
+Hello {# World \#1 #}! - escaping enumeration 2
+Hello {# World #1 \#}! - escaping enumeration 3
