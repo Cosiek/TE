@@ -3,25 +3,21 @@ nodesModule = require('./nodeTypes')
 
 class TxtEdDocument{
 
-    constructor(text){
-        let txt = text || "";
-
+    constructor(){
         this.nodeClasses = [];
         this.nodes = [];
-
-        this.processText(txt);
     }
 
     // ========================================================================
     // Managing Configuration =================================================
     // ========================================================================
 
-    setNodeTypes(){
-
+    setNodeTypes(nodeTypes){
+        this.nodeClasses = nodeTypes;
     }
 
-    addNodeType(){
-
+    addNodeType(nodeType){
+        this.nodeClasses.push(nodeType);
     }
 
     // ========================================================================
@@ -38,7 +34,7 @@ class TxtEdDocument{
     // Generating Nodes ===============
 
     newNodeFromLine(line){
-        for (nodeClass of this.nodeClasses){
+        for (let nodeClass of this.nodeClasses){
             if (nodeClass.isStartLine(line)){
                 return new nodeClass(line);
             }
@@ -96,7 +92,13 @@ class TxtEdDocument{
 }
 
 function getDocument(txt){
-    let txtEdDoc = new TxtEdDocument(txt);
+    // init
+    let txtEdDoc = new TxtEdDocument();
+    // configuration
+    txtEdDoc.setNodeTypes(nodesModule.DefaultNodeTypes);
+    // text processing
+    console.log(txtEdDoc.nodeClasses)
+    txtEdDoc.processText(txt);
     return txtEdDoc;
 }
 

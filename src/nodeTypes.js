@@ -123,5 +123,15 @@ class ParagraphNode extends BaseNode{
     }
 }
 
+/*
+Export ========================================================================
+*/
 
+module.exports.DefaultNodeTypes = [
+    CodeNode,
+    CommentNode,
+    EmptyLineNode,
+    HeaderNode,
+    ListNode,
+];
 module.exports.ParagraphNode = ParagraphNode;
