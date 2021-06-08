@@ -13,7 +13,7 @@ class Line{
         let nodeStack = [];
         let buffer = [];
         let i = 0;
-        while (i <= this.line.length - 1){
+        while (i <= this.line.length - 1 || buffer.length){
             // fill buffer
             while (!this._isBufferFilled(buffer) && i <= this.line.length - 1){
                 // add char to buffer
@@ -115,23 +115,28 @@ class InlineNode{
     constructor(){
         this.isOpen = true;  // is it useful?
         this.nodes = [];
-        this.str = "";
+        this.originalStr = "";
     }
 
-    addStr(buffer){
-        // get rid of escape char
-        if (buffer[0] === "\\"){
-            buffer.shift();
+    addToOriginalString(str){
+        this.originalStr += str;
+    }
+
+    addToStr(str){
+        // check if last node is a string
+        if (typeof(this.nodes[this.nodes.length-1]) !== "string"){
+            this.nodes.push("");
         }
-        // check of buffer isn't empty.
-        if (buffer.length > 0){
-            // add first buffer char to string
-            this.str += buffer.shift();
+
+        let i = 0;
+        while (i < str.length){
+            this.nodes[this.nodes.length-1] += str[i];
+            i++;
         }
     }
 
     addNode(node){
-        this.addToStr(node.str);
+        this.addToOriginalString(node.originalStr);
         this.nodes.push(node);
     }
 
@@ -152,7 +157,14 @@ class InlineNode{
     }
 
     processBuffer(buffer){
-        this.addToStr(buffer.shift())
+        let char = buffer.shift();
+        this.addToOriginalString(char);
+        // handle escaping
+        if (char === "\\"){
+            char = buffer.shift();
+            this.addToOriginalString(char);
+        }
+        this.addToStr(char);
     }
 
     close(){ this.isOpen = false }
