@@ -1,3 +1,6 @@
+
+lineProcessor = require("./lineProcessor")
+
 /*
 Base Node Class ===============================================================
 */
@@ -28,8 +31,18 @@ class BaseNode{
         }
     }
 
+    stripLine(line){
+        /*
+        Strips a line of text of any characters marking line node type.
+
+        This should essentially return a line content, without any line node related markings.
+        */
+        return line;
+    }
+
     processLine(line){
-        return lineProcessor.process(line);
+        let content = this.stripLine(line);
+        return lineProcessor.processLine(content);
     }
 }
 
@@ -45,6 +58,12 @@ class CodeNode extends BaseNode{
     canIncludeLine(line){
         return this.lines.length === 1 || this.lines.length > 1 && this.lines[this.lines.length-1].trim() != "```";
     }
+
+    processContent(){
+        for (let idx = 1; idx < this.lines.length - 2; idx++){
+            this.processedLines.push(this.processLine(this.lines[idx]));
+        }
+    }
 }
 
 class CommentNode extends BaseNode{
@@ -54,6 +73,12 @@ class CommentNode extends BaseNode{
 
     canIncludeLine(line){
         return CommentNode.isStartLine(line);
+    }
+
+    processLine(line){
+        // comment lines don't need processing - no enumerations are done here
+        // TODO: consider using comments for defining variables in a transparent way
+        return line
     }
 }
 
@@ -95,6 +120,10 @@ class HeaderNode extends BaseNode{
     addLine(line){
         throw Error('NotAllowed: adding lines to header nodes is not allowed.');
     }
+
+    stripLine(line){
+        return line.replace(/^\^+ */, "");
+    }
 }
 
 class ListNode extends BaseNode{
@@ -105,6 +134,10 @@ class ListNode extends BaseNode{
 
     canIncludeLine(line){
         return ListNode.isStartLine(line);
+    }
+
+    stripLine(line){
+        return line.replace(/^(\s+)-(\s+)?/, "");
     }
 }
 
