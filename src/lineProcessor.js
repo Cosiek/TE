@@ -259,4 +259,14 @@ function processLine(lineTxt){
     return line;
 }
 
+function getUnprocessedLine(lineTxt){
+    /*
+    Returns a new line object, that includes given text, but doesn't process it.
+
+    Useful when you don't really want the line to be processed - like comment lines
+    */
+    return new Line(lineTxt);
+}
+
 module.exports.processLine = processLine;
+module.exports.getUnprocessedLine = getUnprocessedLine;

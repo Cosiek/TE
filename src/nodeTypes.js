@@ -78,7 +78,7 @@ class CommentNode extends BaseNode{
     processLine(line){
         // comment lines don't need processing - no enumerations are done here
         // TODO: consider using comments for defining variables in a transparent way
-        return line
+        return lineProcessor.getUnprocessedLine(line);
     }
 }
 
