@@ -44,6 +44,14 @@ class BaseNode{
         let content = this.stripLine(line);
         return lineProcessor.processLine(content);
     }
+
+    getText(){
+        let txt = "";
+        for (let processedLine of this.processedLines){
+            txt += processedLine.getText();
+        }
+        return txt;
+    }
 }
 
 /*
@@ -80,6 +88,10 @@ class CommentNode extends BaseNode{
         // TODO: consider using comments for defining variables in a transparent way
         return lineProcessor.getUnprocessedLine(line);
     }
+
+    getText(){
+        return ""
+    }
 }
 
 class EmptyLineNode extends BaseNode{
@@ -103,6 +115,10 @@ class EmptyLineNode extends BaseNode{
     }
 
     processContent(){/* Nothing to do here */}
+
+    getText(){
+        return ""
+    }
 }
 
 class HeaderNode extends BaseNode{

@@ -104,6 +104,14 @@ class Line{
     addNode(node){
         this.nodes.push(node);
     }
+
+    getText(){
+        let txt = "";
+        for (let node of this.nodes){
+            txt += node.getText();
+        }
+        return txt;
+    }
 }
 
 /*
@@ -204,6 +212,21 @@ class InlineNode{
     getOwnVariables(){
         return [];
     }
+
+    getText(){
+        let txt = "";
+        for (let node of this.nodes){
+            if (node.getVariables === undefined){
+                // simple string - not a node
+                txt += node;
+            } else {
+                // a true node that needs processing
+                txt += node.getText();
+            }
+        }
+        return txt
+    }
+}
 
 /*
 Variable class ================================================================

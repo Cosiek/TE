@@ -95,13 +95,11 @@ class TxtEdDocument{
         /*
             Returns document text, after substitutions, enumerations, escaping... done.
         */
-        console.log(this.nodes[0])
-        console.log(this.nodes[1])
-        console.log(this.nodes[2])
-        console.log(this.nodes[3])
-        console.log(this.nodes[4])
-        console.log(this.nodes[this.nodes.length - 2])
-        return ""
+        let txt = "";
+        for (let node of this.nodes){
+            txt += node.getText();
+        }
+        return txt;
     }
 
     convertToHTML(){
@@ -118,7 +116,6 @@ function getDocument(txt){
     // configuration
     txtEdDoc.setNodeTypes(nodesModule.DefaultNodeTypes);
     // text processing
-    console.log(txtEdDoc.nodeClasses)
     txtEdDoc.processText(txt);
     return txtEdDoc;
 }
