@@ -1,11 +1,13 @@
 
 nodesModule = require('./nodeTypes')
+lineProcessor = require('./lineProcessor')
 
 class TxtEdDocument{
 
     constructor(){
         this.nodeClasses = [];
         this.nodes = [];
+        this.variables = {}
     }
 
     // ========================================================================
@@ -29,6 +31,25 @@ class TxtEdDocument{
             Processes given text, to produce a Document object.
         */
         this.nodes = this.splitTextToNodes(text);
+        // initialize counters and other variables
+        for (let node of this.nodes){
+            for (let line of node.processedLines){
+                for (let inlineNode of line.nodes){
+                    this.registerVariables(inlineNode.getVariables());
+                }
+            }
+        }
+    }
+
+    registerVariables(variables){
+        for (let variable of variables){
+            if (this.variables[variable.idString] === undefined){
+                this.variables[variable.idString] = new lineProcessor.VariableManager(variable.idString);
+                this.variables[variable.idString].addVariable(variable);
+            } else {
+                this.variables[variable.idString].addVariable(variable);
+            }
+        }
     }
 
     // Generating Nodes ===============

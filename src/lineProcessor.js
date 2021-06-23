@@ -172,6 +172,64 @@ class InlineNode{
     acceptsAsChild(node){
         // TODO: NotImplementedError
     }
+
+    getVariables(){
+        /*
+            Returns a list of any variable ocurance in this node or sub nodes.
+
+            This includes both variables used and defined here.
+
+            Variables from nested nodes should be returned first.
+        */
+        let variables = [];
+        // get from sub-nodes
+        for (let node of this.nodes){
+            // skip basic text noes
+            if (node.getVariables === undefined){
+                continue
+            }
+            console.log(">>> >> > ", node)
+            for (let variable of node.getVariables()){
+                variables.push(variable);
+            }
+        }
+        // get own variables
+        for (let variable of this.getOwnVariables()){
+            variables.push(variable);
+        }
+
+        return variables
+    }
+
+    getOwnVariables(){
+        return [];
+    }
+
+/*
+Variable class ================================================================
+*/
+
+class VariableManager{
+    constructor(idString){
+        this.idString = idString;
+
+        this.initialValue = 1;
+        this.variables = []
+    }
+
+    addVariable(variable){
+        this.variables.push(variable);
+    }
+}
+
+class Variable{
+    constructor(idString, setValue){
+        this.idString = idString;  // TODO: required
+        if (setValue == undefined){
+            setValue = null;
+        }
+        this.setValue = setValue;     // defaults to null
+    }
 }
 
 /*
@@ -203,6 +261,15 @@ class EnumerationNode extends InlineNode{
     }
 
     acceptsAsChild(node){ return true } // TODO
+
+    // variables handling
+
+    getOwnVariables(){
+        let idString = this.originalStr;
+        let value = null;
+        let variable = new Variable(idString, value);
+        return [variable,];
+    }
 }
 
 class TextNode extends InlineNode{
@@ -270,3 +337,4 @@ function getUnprocessedLine(lineTxt){
 
 module.exports.processLine = processLine;
 module.exports.getUnprocessedLine = getUnprocessedLine;
+module.exports.VariableManager = VariableManager;
